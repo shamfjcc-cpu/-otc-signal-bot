@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ps">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTC Signal Bot</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: white;
+  text-align: center;
+}
+.card {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 22px;
+  background: #1d293b;
+  border-radius: 18px;
+}
+h1 { color: #55e6a5; }
+select, button {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+button {
+  background: #55e6a5;
+  color: #101827;
+  font-weight: bold;
+}
+.signal {
+  padding: 20px;
+  margin-top: 18px;
+  border-radius: 12px;
+  background: #101827;
+  font-size: 24px;
+}
+.small { color: #b9c4d5; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>📊 OTC Signal Bot</h1>
+  <p>EUR/USD OTC</p>
+  <p>ستراتیژي: RSI + EMA</p>
+
+  <select id="pair">
+    <option>EUR/USD OTC</option>
+  </select>
+
+  <button onclick="signal()">د ازمایښتي سیګنال ښودل</button>
+
+  <div class="signal" id="result">⚪ WAIT</div>
+  <p class="small" id="note">
+    دا یوازې د انټرفېس ازموینه ده؛ لا له بازار سره نه دی وصل.
+  </p>
+</div>
+
+<script>
+function signal() {
+  document.getElementById("result").textContent = "⚪ WAIT";
+  document.getElementById("note").textContent =
+    "د بازار معلومات نشته. دا پاڼه لا واقعي BUY/SELL سیګنالونه نه محاسبه کوي.";
+}
+</script>
+</body>
+</html>
